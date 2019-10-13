@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="flex-box">
+        <div class="flex-pack"><a class="tab_btn is-active-btn" href="#item1">タブ1</a></div>
+        <div class="flex-pack"><a class="tab_btn" href="#item2">タブ2</a></div>
+        <div class="flex-pack"><a class="tab_btn" href="#item3">タブ3</a></div>
+    </div>    
+    <div class="tab_item is-active-item" id="item1">1番目のコンテンツ</div>
+    <div class="tab_item" id="item2">2番目のコンテンツ</div>
+    <div class="tab_item" id="item3">3番目のコンテンツ</div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $('.tab_btn').on('click', function(){
+                //表示させるコンテンツを変更
+                $('.tab_item').removeClass("is-active-item");
+                $($(this).attr("href")).addClass("is-active-item");
+            
+                //表示させているコンテンツの色などを変更
+                $('.tab_btn').removeClass('is-active-btn');
+                $(this).addClass('is-active-btn');
+            });
+        });
+    </script>
+</body>
+</html>
